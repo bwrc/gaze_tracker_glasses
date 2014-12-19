@@ -30,10 +30,10 @@
   </settings>
 
   <settings id="input_files">
-    <gazetracker value = "default.xml" />                <!-- the parameter file -->
-    <eyeCamCalibration value = "eyeCam.calib" />         <!-- result of LED and eye camera calibration -->
-    <sceneCamCalibration value = "sceneCam.calib" />     <!-- result of scene camera calibration -->
-    <mapper value = "mapper.yaml" />                     <!-- result of two camera rig calibration -->
+    <gazetracker value = "default.xml" />                        <!-- the parameter file -->
+    <eyeCamCalibration value = "example_eyeCam.calib" />         <!-- result of LED and eye camera calibration -->
+    <sceneCamCalibration value = "example_sceneCam.calib" />     <!-- result of scene camera calibration -->
+    <mapper value = "example_mapper.yaml" />                     <!-- result of two camera rig calibration -->
   </settings>
 
 </document>
