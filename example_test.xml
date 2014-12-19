@@ -1,0 +1,40 @@
+<document>
+
+  <settings id="output">
+    <!-- null: not saving; otherwise enter a folder -->
+    
+    <!--
+	 <directory value= "save_to_this_directory/"/>
+    -->
+
+    <!--    --> 
+	 <directory value="null" />
+
+  </settings>
+
+  <settings id="input_devices">
+    <!-- 1 eye cam
+	 2 scene cam -->
+
+    <!-- use the camera streams as input -->
+    <!-- 
+	 <dev1 value="/dev/video1" />
+	 <dev2 value="/dev/video0" />
+    -->
+
+    <!-- use the files as input -->
+    <dev1 value="example_video1.mjpg" />
+    <dev1 value="example_video2.mjpg" />
+
+
+  </settings>
+
+  <settings id="input_files">
+    <gazetracker value = "default.xml" />                <!-- the parameter file -->
+    <eyeCamCalibration value = "eyeCam.calib" />         <!-- result of LED and eye camera calibration -->
+    <sceneCamCalibration value = "sceneCam.calib" />     <!-- result of scene camera calibration -->
+    <mapper value = "mapper.yaml" />                     <!-- result of two camera rig calibration -->
+  </settings>
+
+</document>
+
