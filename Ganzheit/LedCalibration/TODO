@@ -1,0 +1,28 @@
+- Remove items with keyboard
+
+- Remove LEDs with keyboard
+
+- modify circle spacing by hitting enter
+
+- Remove samples
+
+- update thumbnail panel when a camera or LED is selected or modified in the treewidget
+
+- Add a transformation matrix to CameraCalibSample, see CameraCalibrator::calibrate
+    rvecs
+    tvecs
+
+- Remove samples when circle spacing changes
+
+- Verify if CV_32F always equals float
+
+- When any child item is selected in ResultItem, it must result in selecting either the camera or LED calibration mode.
+
+- do not take the object points as argument for the LED and Camera calibrators, instead define the points
+ in those classes
+
+- Do not draw the results to the result images because then they cannot be 
+  reanalysed.
+
+- check if the image size gets stored into to the xml files
+

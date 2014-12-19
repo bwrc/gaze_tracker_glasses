@@ -1,0 +1,85 @@
+<document>
+
+    <settings filename="CRTemplate">
+        <MAX_CR_WIDTH value="7.0" />
+        <CR_MASK_LEN value="35" />
+    </settings>
+
+
+    <settings filename="PupilTracker">
+
+        <CR_THRESHOLD value="215" />
+        <PUPIL_THRESHOLD value="10" />
+        <AUTO_THRESHOLD value="0" />
+        <MAX_NOF_CLUSTERS value="200" />
+        <MAX_CLUSTER_SIZE value="800" />
+        <MIN_CLUSTER_SIZE value="30" />
+        <NOF_RAYS value="50" />
+        <MAX_PUPIL_RADIUS value="400" />
+        <MIN_NOF_RADIUSES value="30" />
+        <MIN_PUPIL_RADIUS value="8" />
+        <MIN_PUPIL_AREA value="160" />
+        <DEFAULT_PUPIL_RADIUS value="10" />
+        <NOF_VERIFICATION_FRAMES value="5" />
+        <MAX_NOF_BAD_FRAMES value="3.55102" />
+        <MIN_HISTOGRAM_VALUE value="20" />
+        <ROI_W_DEFAULT value="350" />
+        <ROI_H_DEFAULT value="350" />
+        <MIN_ROI_W value="30" />
+        <MAX_FAILED_TRACKS_BEFORE_RESET value="9.42857" />
+        <CR_MAX_ERR_MULTIPLIER value="0.01" />
+        <ROI_MULTIPLIER value="8" />
+        <CROP_AREA_X value="148" />
+        <CROP_AREA_Y value="60" />
+        <CROP_AREA_W value="400" />
+        <CROP_AREA_H value="320" />
+
+    </settings>
+
+
+    <settings filename="Starburst">
+        <STARBURST_MIN_ITERATIONS value="0" />
+        <STARBURST_MAX_ITERATIONS value="10" />
+        <STARBURST_REQUIRED_ACCURACY value="10" />
+        <STARBURST_CIRCULAR_STEPS value="20" />
+        <STARBURST_MIN_SEED_POINTS value="12" />
+        <STARBURST_OUTLIER_DISTANCE value="1.5" />
+        <STARBURST_BLOCK_COUNT value="1" />
+        <STARBURST_RELATIVE_MAX_POINT_VARIANCE value="1.5" />
+    </settings>
+
+
+    <settings filename="CorneaComputer">
+        <RHO value="0.0077" />
+    </settings>
+
+
+    <settings filename="GazeTracker">
+        <rd value="0.0030" />
+        <NOF_PERIMETER_POINTS value="60" />
+        <MYY value="0.748503" />
+    </settings>
+
+
+    <settings filename="SceneMapper">
+      <GAZE_DISTANCE value="1.0" />
+    </settings>
+
+
+    <settings filename="SettingsPanel">
+
+        <trackbar value="CR_THRESHOLD" />
+        <trackbar value="PUPIL_THRESHOLD" />
+        <trackbar value="AUTO_THRESHOLD" />
+        <trackbar value="MAX_CR_WIDTH" />
+        <trackbar value="CROP_AREA_X" />
+        <trackbar value="CROP_AREA_Y" />
+        <trackbar value="CROP_AREA_W" />
+        <trackbar value="CROP_AREA_H" />
+        <trackbar value="rd" />
+        <trackbar value="RHO" />
+        <trackbar value="GAZE_DISTANCE" />
+
+    </settings>
+
+</document>

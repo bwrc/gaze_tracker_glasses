@@ -1,0 +1,12 @@
+data/BinaryResultParser.h.i
+data/ResultParser.h.i
+data/ResultData.h.i
+data/ResultParser.cpp.i
+data/tests/main.cpp.i
+data/tests/Makefile.i
+data/tests/binary_parser/main.cpp.i
+data/BinaryResultParser.cpp.i
+data/ResultData.cpp.i
+data/tests/ascii_parser/main.cpp.i
+data/tests/ascii_parser/Makefile.i
+data/tests/binary_parser/Makefile.i

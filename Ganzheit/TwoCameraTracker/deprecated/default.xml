@@ -1,0 +1,64 @@
+<document>
+    <settings filename="CRTemplate">
+        <MAX_CR_WIDTH value="8.15306" />
+        <CR_MASK_LEN value="19.7755" />
+    </settings>
+    <settings filename="PupilTracker">
+        <MAX_NOF_CLUSTERS value="200" />
+        <MAX_CLUSTER_SIZE value="800" />
+        <MIN_CLUSTER_SIZE value="30" />
+        <NOF_RAYS value="150" />
+        <MAX_PUPIL_RADIUS value="400" />
+        <MIN_NOF_RADIUSES value="30" />
+        <MIN_PUPIL_RADIUS value="10" />
+        <MIN_PUPIL_AREA value="314" />
+        <DEFAULT_PUPIL_RADIUS value="10" />
+        <NOF_VERIFICATION_FRAMES value="5" />
+        <MAX_NOF_BAD_FRAMES value="2.57143" />
+        <MIN_HISTOGRAM_VALUE value="20" />
+        <ROI_W_DEFAULT value="250" />
+        <ROI_H_DEFAULT value="250" />
+        <MIN_ROI_W value="30" />
+        <MAX_FAILED_TRACKS_BEFORE_RESET value="3.52857" />
+        <PUPILCANDIDATE_SIZE_MULTIPLIER value="2" />
+        <CR_THRESHOLD value="250.316" />
+        <ROI_MULTIPLIER value="2.67959" />
+    </settings>
+    <settings filename="Starburst">
+        <STARBURST_MIN_ITERATIONS value="0.183673" />
+        <STARBURST_MAX_ITERATIONS value="10" />
+        <STARBURST_REQUIRED_ACCURACY value="10" />
+        <STARBURST_CIRCULAR_STEPS value="44.8163" />
+        <STARBURST_MIN_FEATURES value="19.4694" />
+        <STARBURST_OUTLIER_DISTANCE value="1.46939" />
+        <STARBURST_RELATIVE_MAX_THRESHOLD_VARIANCE value="1" />
+        <STARBURST_RELATIVE_MAX_POINT_VARIANCE value="1.5" />
+    </settings>
+    <settings filename="CorneaComputer">
+        <RHO value="7.99388" />
+    </settings>
+    <settings filename="GazeTracker">
+        <rd value="4.96929" />
+        <NOF_PERIMETER_POINTS value="60" />
+        <N_AH value="1" />
+        <N_AIR value="1" />
+        <MYY value="0.753061" />
+        <PREDATOR_ANGLE value="30" />
+    </settings>
+    <settings filename="SettingsPanel">
+        <trackbar value="STARBURST_CIRCULAR_STEPS" />
+        <trackbar value="MAX_NOF_BAD_FRAMES" />
+        <trackbar value="MAX_FAILED_TRACKS_BEFORE_RESET" />
+        <trackbar value="STARBURST_OUTLIER_DISTANCE" />
+        <trackbar value="STARBURST_MIN_FEATURES" />
+        <trackbar value="STARBURST_MIN_ITERATIONS" />
+        <trackbar value="MAX_CR_WIDTH" />
+        <trackbar value="CR_THRESHOLD" />
+        <trackbar value="CR_MASK_LEN" />
+        <trackbar value="MYY" />
+        <trackbar value="rd" />
+        <trackbar value="RHO" />
+        <trackbar value="STARBURST_BLOCK_COUNT" />
+        <trackbar value="ROI_MULTIPLIER" />
+    </settings>
+</document>

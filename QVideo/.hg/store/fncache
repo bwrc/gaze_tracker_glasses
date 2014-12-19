@@ -1,0 +1,5 @@
+data/VideoStreamer.cpp.i
+data/VideoStreamer.h.i
+data/streamer_structs.h.i
+data/FrameBuffer.cpp.i
+data/FrameBuffer.h.i
