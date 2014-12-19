@@ -1,0 +1,250 @@
+The tracker settings are defined in a TrackerSettings class. The settings are described below.
+
+
+Pupil tracker specific:
+
+    int MAX_NOF_CLUSTERS;
+        Maximum number of clusters
+
+    int MAX_CLUSTER_SIZE;
+        Maximum cluster size
+
+    int MIN_CLUSTER_SIZE;
+        Minimum number of clusters
+
+    int MAX_PUPIL_RADIUS;
+        Maximum pupil radius
+
+    int MIN_PUPIL_RADIUS;
+        Minimum pupil radius
+
+    int NOF_RAYS;
+        Number of rays casted within [-45, 45] degrees to the left and to the right in double ellipse fitting.
+
+    int MIN_NOF_RADIUSES;
+        Minimum number of found points in casting the rays.
+
+    int MIN_PUPIL_AREA;
+        Minimum pupil area computed by cv::contourArea()
+
+    unsigned int NOF_VERIFICATION_FRAMES;
+        The size of
+        previous_ellipses. Used in coherence estimation. Get the best
+        pupil candidate from the clusters.  An ellipse fit with the
+        smallest error does not necessarily mean that this ellipse is
+        best in terms of being similar to the previous
+        results. Therefore, the ellipse with the smallest error will
+        be chosen only, if the best ellipse, with respect to previous
+        frames, was not found. However, the major axis of the ellipse
+        with the smallest error will be stored as a part of a measure
+        of goodness in frames to come.  This method was first
+        introduced by Arto Meriläinen in his Master's Thesis.
+
+    unsigned int MAX_NOF_BAD_FRAMES;
+        Used in determing the coherence
+        of a pupil ellipse candidate. The major axis is compared to N
+        previous major axes and if out of N MAX_NOF_BAD_FRAMES are not
+        good the candidate is not coherent. The comparison is done
+        followingly: abs(curMaj - maj_i) > imgW / 120.0 if this
+        condition is true, the it's bad.
+
+    double ROI_MULTIPLIER;
+        The ROI is a square area whose side is the
+        previous frame's pupil's major axis multiplied with this
+        value and the center is the starburst pupil centre.
+
+    int ROI_W_DEFAULT;
+        Default ROI width if an estimate was not found for it
+
+    int ROI_H_DEFAULT;
+        Default ROI height if an estimate was not found for it
+
+    int MIN_ROI_W;
+        If the pupil's major axis multiplied with ROI_MULTIPLIER is lower than this value, this values is used instead.
+
+    int MAX_FAILED_TRACKS_BEFORE_RESET;
+        The PupilTracker will reset starburst after this many failed pupil extractions 
+
+    int CR_THRESHOLD;
+        Threshold for the glints in the histogram equalised image
+
+    int PUPIL_THRESHOLD;
+        Threshold for the pupil in the histogram equalised image, if auto thresholding is off.
+
+    int AUTO_THRESHOLD; // 0 or 1
+        Auto threshold on 1, or off 0
+
+    double CR_MAX_ERR_MULTIPLIER;
+        A value between [0, 1] describing how good the CR candidates must be with respect to the best CR candidate.
+         CR_MAX_ERR_MULTIPLIER *  curErr < errOfBest
+         => maxAcceptedErr = errOfBest / CR_MAX_ERR_MULTIPLIER
+
+    int CROP_AREA_X;
+        Crop area x
+
+    int CROP_AREA_Y;
+        Crop area y
+
+    int CROP_AREA_W;
+        Crop area width
+
+    int CROP_AREA_H;
+        Crop area height
+
+
+
+    Starburst specific
+
+    int STARBURST_MAX_ITERATIONS;
+        starburst_pupil_contour_detection() iterates with different starting points and measures convergence. The iteration ends when convergence is reached or this many iterations have passed.
+
+    int STARBURST_REQUIRED_ACCURACY;
+        Convergence accuracy
+
+    int STARBURST_CIRCULAR_STEPS;
+        Number of rays casted in starburst_pupil_contour_detection(). Use a relatively small value like 10-20, otherwise the computation takes a long time.
+
+    int STARBURST_MIN_SEED_POINTS;
+        At least this many seed points need to be found
+
+    int STARBURST_BLOCK_COUNT;
+        Into how many blocks the analysis is divided. A block means a ROI of the frame,
+
+    double STARBURST_OUTLIER_DISTANCE;
+        Each point's distance to the mean is tested and those whose distance is greater than
+        the standard deviation * STARBURST_OUTLIER_DISTANCE are discarded.
+
+    double STARBURST_RELATIVE_MAX_POINT_VARIANCE;
+       Something quite magical happens with this. See for yourself in starburst.cpp
+
+
+
+    CRTemplate specific
+
+    int MAX_CR_WIDTH;
+        The diameter of the corneal reflection template
+
+    int CR_MASK_LEN;
+        The Corneal reflection template image width
+
+
+
+    GazeTracker specific
+
+    double rd;
+        The pupil's distance from the cornea sphere
+
+    int NOF_PERIMETER_POINTS;
+        Number of perimeter points to be ray traced.
+
+    double MYY;
+        The ratio of refractive coefficients of the air and the cornea
+
+
+
+    Cornea Computer specific
+
+    double RHO;
+        Cornea sphere radius
+
+
+
+    Gaze mapper specific
+
+    double GAZE_DISTANCE;
+       The distance of the gaze
+
+
+
+Example xml file:
+
+<document>
+
+    <settings filename="CRTemplate">
+        <MAX_CR_WIDTH value="7.0" />
+        <CR_MASK_LEN value="35" />
+    </settings>
+
+
+    <settings filename="PupilTracker">
+
+        <CR_THRESHOLD value="254" />
+        <PUPIL_THRESHOLD value="10" />
+        <AUTO_THRESHOLD value="0" />
+        <MAX_NOF_CLUSTERS value="200" />
+        <MAX_CLUSTER_SIZE value="800" />
+        <MIN_CLUSTER_SIZE value="30" />
+        <NOF_RAYS value="150" />
+        <MAX_PUPIL_RADIUS value="400" />
+        <MIN_NOF_RADIUSES value="30" />
+        <MIN_PUPIL_RADIUS value="10" />
+        <MIN_PUPIL_AREA value="314" />
+        <DEFAULT_PUPIL_RADIUS value="10" />
+        <NOF_VERIFICATION_FRAMES value="5" />
+        <MAX_NOF_BAD_FRAMES value="3.55102" />
+        <MIN_HISTOGRAM_VALUE value="20" />
+        <ROI_W_DEFAULT value="350" />
+        <ROI_H_DEFAULT value="350" />
+        <MIN_ROI_W value="30" />
+        <MAX_FAILED_TRACKS_BEFORE_RESET value="9.42857" />
+        <CR_MAX_ERR_MULTIPLIER value="0.01" />
+        <ROI_MULTIPLIER value="4" />
+        <CROP_AREA_X value="148" />
+        <CROP_AREA_Y value="60" />
+        <CROP_AREA_W value="400" />
+        <CROP_AREA_H value="320" />
+
+    </settings>
+
+
+    <settings filename="Starburst">
+        <STARBURST_MIN_ITERATIONS value="0.163265" />
+        <STARBURST_MAX_ITERATIONS value="10" />
+        <STARBURST_REQUIRED_ACCURACY value="10" />
+        <STARBURST_CIRCULAR_STEPS value="46.2857" />
+        <STARBURST_MIN_FEATURES value="16.898" />
+        <STARBURST_OUTLIER_DISTANCE value="1.5" />
+        <STARBURST_BLOCK_COUNT value="1" />
+        <STARBURST_RELATIVE_MAX_THRESHOLD_VARIANCE value="1" />
+        <STARBURST_RELATIVE_MAX_POINT_VARIANCE value="1.5" />
+    </settings>
+
+
+    <settings filename="CorneaComputer">
+        <RHO value="0.0077" />
+    </settings>
+
+
+    <settings filename="GazeTracker">
+        <rd value="0.0030" />
+        <NOF_PERIMETER_POINTS value="60" />
+        <MYY value="0.748503" />
+    </settings>
+
+
+    <settings filename="SceneMapper">
+      <GAZE_DISTANCE value="1.0" />
+    </settings>
+
+
+    <settings filename="SettingsPanel">
+
+        <trackbar value="CR_THRESHOLD" />
+        <trackbar value="PUPIL_THRESHOLD" />
+        <trackbar value="AUTO_THRESHOLD" />
+        <trackbar value="MAX_CR_WIDTH" />
+        <trackbar value="CROP_AREA_X" />
+        <trackbar value="CROP_AREA_Y" />
+        <trackbar value="CROP_AREA_W" />
+        <trackbar value="CROP_AREA_H" />
+        <trackbar value="rd" />
+        <trackbar value="RHO" />
+        <trackbar value="GAZE_DISTANCE" />
+
+    </settings>
+
+</document>
+
+
+
+
