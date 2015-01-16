@@ -12,13 +12,13 @@ file LICENSE.txt at the root directory.
 This software is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.
 
 *Authors:*
-Sharman Jagadeesan
-Kristian Lukander
-Arto Meriläinen
-Huageng Chi
+Sharman Jagadeesan    
+Kristian Lukander     
+Arto Meriläinen     
+Huageng Chi     
 
 
 *Contact:*
 
-kristian.lukander@ttl.fi
+kristian.lukander@ttl.fi     
 miika.toivanen@ttl.fi
